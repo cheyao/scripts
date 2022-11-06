@@ -43,7 +43,7 @@ preview: svg viewer
 setup:
 	if [ $(METHOD) == "systemctl" ]; then systemctl enable --now --user podman.socket; export DOCKER_HOST=unix://$(XDG_RUNTIME_DIR)/podman/podman.sock; fi
 	python3 -m pip install requests PyYAML gdstk numpy gdspy triangle pygltflib
-	if  [ ! -d scripts ]; then git clone https://github.com/cheyao/scripts.git; fi
+	# if  [ ! -d scripts ]; then git clone https://github.com/cheyao/scripts.git; fi
 	if  [ ! -d ~/caravel_user_project ]; then git clone https://github.com/efabless/caravel_user_project.git -b mpw-7a; cd ~/caravel_user_project; make setup; fi
 	
 clean:
